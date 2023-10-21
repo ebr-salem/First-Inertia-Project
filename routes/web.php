@@ -34,9 +34,14 @@ Route::get('/setings', function () {
 });
 
 Route::get('/help', function () {
-    sleep(2); // To see the progress bar
+    return Inertia::render('HelpView', [
+        'time' => now() -> toTimeString()
+    ]);
+});
 
-    return Inertia::render('HelpView');
+Route::post('/salem', function () {
+    // dd("I'm trying to log out");
+    dd(request('myName'));
 });
 
 Route::get('/dashboard', function () {

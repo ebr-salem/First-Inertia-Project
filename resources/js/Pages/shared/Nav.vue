@@ -3,6 +3,7 @@
         <li><Link href="/">Home</Link></li>
         <li><Link href="/setings">Setings</Link></li>
         <li><Link href="/help">Help</Link></li>
+        <li><Link href="/salem" method="post" :data="{ myName: 'salem' }" as="button">Salem</Link></li>
     </ul>
 </template>
 
