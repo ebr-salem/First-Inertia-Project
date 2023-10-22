@@ -1,74 +1,39 @@
 <template>
     <ul class="nav">
-        <li>
-            <Link
-                href="/"
-                class="link"
-                :class="{
-                    'active-link': $page.component == 'HomeView',
-                }"
-            >
-                Home
-            </Link>
-        </li>
+        <NavLink href="/" :isActive="$page.component == 'HomeView'">
+            Home
+        </NavLink>
 
-        <li>
-            <Link
-                href="/setings?age=20"
-                class="link"
-                :class="{
-                    'active-link': $page.component == 'SetingsView',
-                }"
-            >
-                Setings
-            </Link>
-        </li>
+        <NavLink
+            href="/setings?age=20"
+            :isActive="$page.component == 'SetingsView'"
+        >
+            Setings
+        </NavLink>
 
-        <li>
-            <Link
-                href="/help"
-                class="link"
-                :class="{
-                    'active-link': $page.component == 'HelpView',
-                }"
-            >
-                Help
-            </Link>
-        </li>
+        <NavLink href="/help" :isActive="$page.component == 'HelpView'">
+            Help
+        </NavLink>
 
-        <li>
-            <Link
-                href="/salem"
-                class="link"
-                method="post"
-                :data="{ myName: 'salem' }"
-                as="button"
-            >
-                Salem
-            </Link>
-        </li>
+        <NavLink
+            href="/salem"
+            method="post"
+            as="button"
+            :data="{ myName: 'salem' }"
+        >
+            Salem
+        </NavLink>
     </ul>
 </template>
 
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import NavLink from "./NavLink.vue";
 </script>
 
 <style scoped>
 ul {
     list-style-type: circle;
     padding-left: 30px;
-}
-
-.link {
-    color: blue;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
-
-.active-link {
-    text-decoration: underline;
 }
 </style>
