@@ -1,29 +1,19 @@
 <template>
-    <li>
-        <Link
-            :href="href"
-            :method="method"
-            :as="as"
-            :data="data"
-            class="link"
-            :class="{
-                'active-link': isActive,
-            }"
-        >
-            <slot />
-        </Link>
-    </li>
+    <Link
+        class="link"
+        :class="{
+            'active-link': isActive,
+        }"
+    >
+        <slot />
+    </Link>
 </template>
 
 <script setup>
 import { Link } from "@inertiajs/vue3";
 
 defineProps({
-    href: String,
     isActive: Boolean,
-    method: String,
-    as: String,
-    data: Object,
 });
 </script>
 

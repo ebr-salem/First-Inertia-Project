@@ -1,33 +1,40 @@
 <template>
     <ul class="nav">
-        <NavLink href="/" :isActive="$page.component == 'HomeView'">
-            Home
-        </NavLink>
+        <li>
+            <NavLink href="/" :isActive="$page.component == 'HomeView'">
+                Home
+            </NavLink>
+        </li>
 
-        <NavLink
-            href="/setings?age=20"
-            :isActive="$page.component == 'SetingsView'"
-        >
-            Setings
-        </NavLink>
+        <li>
+            <NavLink
+                href="/setings?age=20"
+                :isActive="$page.component == 'SetingsView'"
+            >
+                Setings
+            </NavLink>
+        </li>
 
-        <NavLink href="/help" :isActive="$page.component == 'HelpView'">
-            Help
-        </NavLink>
+        <li>
+            <NavLink href="/help" :isActive="$page.component == 'HelpView'">
+                Help
+            </NavLink>
+        </li>
 
-        <NavLink
-            href="/salem"
-            method="post"
-            as="button"
-            :data="{ myName: 'salem' }"
-        >
-            Salem
-        </NavLink>
+        <li>
+            <NavLink
+                href="/salem"
+                method="post"
+                as="button"
+                :data="{ myName: 'salem' }"
+            >
+                Salem
+            </NavLink>
+        </li>
     </ul>
 </template>
 
 <script setup>
-import { Link } from "@inertiajs/vue3";
 import NavLink from "./NavLink.vue";
 </script>
 
