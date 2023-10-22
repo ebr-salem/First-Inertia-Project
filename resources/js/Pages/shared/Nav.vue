@@ -5,7 +5,7 @@
                 href="/"
                 class="link"
                 :class="{
-                    'active-link': $page.url == '/',
+                    'active-link': $page.component == 'HomeView',
                 }"
             >
                 Home
@@ -14,10 +14,10 @@
 
         <li>
             <Link
-                href="/setings"
+                href="/setings?age=20"
                 class="link"
                 :class="{
-                    'active-link': $page.url.startsWith('/setings'),
+                    'active-link': $page.component == 'SetingsView',
                 }"
             >
                 Setings
@@ -29,7 +29,7 @@
                 href="/help"
                 class="link"
                 :class="{
-                    'active-link': $page.url.startsWith('/help'),
+                    'active-link': $page.component == 'HelpView',
                 }"
             >
                 Help
