@@ -41,7 +41,7 @@ Route::get('/help', function () {
 
 Route::post('/salem', function () {
     // dd("I'm trying to log out");
-    dd(request('myName'));
+    dd(request('myName') . ' ' . request('myAge'));
 });
 
 Route::get('/dashboard', function () {

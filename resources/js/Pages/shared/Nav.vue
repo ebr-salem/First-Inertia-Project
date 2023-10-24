@@ -23,10 +23,9 @@
 
         <li>
             <NavLink
-                href="/salem"
+                href="/salem?myName=Salem&myAge=20.5"
                 method="post"
                 as="button"
-                :data="{ myName: 'salem' }"
             >
                 Salem
             </NavLink>
