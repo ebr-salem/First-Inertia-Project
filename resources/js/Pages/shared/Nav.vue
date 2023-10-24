@@ -39,7 +39,10 @@ import NavLink from "./NavLink.vue";
 
 <style scoped>
 ul {
-    list-style-type: circle;
-    padding-left: 30px;
+    display: flex;
+}
+
+ul li {
+    margin: 0 10px;
 }
 </style>

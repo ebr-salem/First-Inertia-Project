@@ -1,10 +1,11 @@
 <template>
-    <h1>This is setings page</h1>
-    <Nav />
+    <Layout>
+        <h1>This is setings page</h1>
+    </Layout>
 </template>
 
 <script setup>
-import Nav from "./shared/Nav.vue";
+import Layout from "./shared/Layout.vue";
 </script>
 
 <style>

@@ -1,10 +1,11 @@
 <template>
-    <h1>Hello in the home page</h1>
-    <Nav />
+    <Layout>
+        <h1>Hello in the home page</h1>
+    </Layout>
 </template>
 
 <script setup>
-import Nav from "./shared/Nav.vue";
+import Layout from "./shared/Layout.vue";
 </script>
 
 <style>
