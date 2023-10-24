@@ -1,11 +1,13 @@
 <template>
-    <Layout>
-        <h1>Hello in the home page</h1>
-    </Layout>
+    <h1>Hello in the home page</h1>
 </template>
 
-<script setup>
+<script>
 import Layout from "./shared/Layout.vue";
+
+export default {
+    layout: Layout,
+};
 </script>
 
 <style>

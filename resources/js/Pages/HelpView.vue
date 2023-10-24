@@ -1,19 +1,24 @@
 <template>
-    <Layout>
-        <h1>This is help page</h1>
-        <Nav />
-        <h1 style="margin-top: 500px">The current time is: {{ time }}</h1>
-        <Link href="/help" as="button" preserve-scroll> Refresh </Link>
-    </Layout>
+    <h1>This is help page</h1>
+    <h1 style="margin-top: 500px">The current time is: {{ time }}</h1>
+    <Link href="/help" as="button" preserve-scroll>Refresh</Link>
 </template>
 
-<script setup>
+<script>
 import Layout from "./shared/Layout.vue";
 import { Link } from "@inertiajs/vue3";
 
-defineProps({
-    time: String,
-});
+export default {
+    components: {
+        Link,
+    },
+
+    layout: Layout,
+
+    props: {
+        time: String,
+    },
+};
 </script>
 
 <style>
