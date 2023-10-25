@@ -7,7 +7,6 @@
 <script setup>
 import Layout from "./shared/Layout.vue";
 import { Link } from "@inertiajs/vue3";
-import { sortUserPlugins } from "vite";
 
 defineOptions({
     layout: Layout,
