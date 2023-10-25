@@ -4,21 +4,18 @@
     <Link href="/help" as="button" preserve-scroll>Refresh</Link>
 </template>
 
-<script>
+<script setup>
 import Layout from "./shared/Layout.vue";
 import { Link } from "@inertiajs/vue3";
+import { sortUserPlugins } from "vite";
 
-export default {
-    components: {
-        Link,
-    },
-
+defineOptions({
     layout: Layout,
+});
 
-    props: {
-        time: String,
-    },
-};
+defineProps({
+    time: String,
+});
 </script>
 
 <style>

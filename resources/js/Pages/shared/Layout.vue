@@ -12,21 +12,17 @@
     </main>
 </template>
 
-<script>
+<script setup>
 import Nav from "./Nav.vue";
 
-export default {
-    components: {
-        Nav,
-    },
-
+defineOptions({
     computed: {
         username() {
-            // Or you can use it directly [ without (this) keyword ]
+            // Or you can use it directly in the template [ without (this) keyword ]
             return this.$page.props.auth.username;
         },
     },
-};
+});
 </script>
 
 <style scoped>

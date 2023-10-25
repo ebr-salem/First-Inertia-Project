@@ -2,12 +2,12 @@
     <h1>This is setings page</h1>
 </template>
 
-<script>
+<script setup>
 import Layout from "./shared/Layout.vue";
 
-export default {
+defineOptions({
     layout: Layout,
-};
+});
 </script>
 
 <style>
