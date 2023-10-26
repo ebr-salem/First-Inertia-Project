@@ -29,8 +29,8 @@ Route::get('/', function () {
     return Inertia::render('HomeView');
 });
 
-Route::get('/setings', function () {
-    return Inertia::render('SetingsView');
+Route::get('/settings', function () {
+    return Inertia::render('SettingsView');
 });
 
 Route::get('/help', function () {

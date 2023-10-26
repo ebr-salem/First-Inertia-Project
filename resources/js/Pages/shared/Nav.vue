@@ -8,10 +8,10 @@
 
         <li>
             <NavLink
-                href="/setings?age=20"
-                :isActive="$page.component == 'SetingsView'"
+                href="/settings?age=20"
+                :isActive="$page.component == 'SettingsView'"
             >
-                Setings
+                Settings
             </NavLink>
         </li>
 
