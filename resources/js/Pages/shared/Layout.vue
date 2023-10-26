@@ -1,4 +1,13 @@
 <template>
+    <Head>
+        <title>My App</title>
+        <meta
+            type="describtion"
+            content="Information about my app"
+            head-key="describtion"
+        />
+    </Head>
+
     <header>
         <div class="logo">
             <h1>Logo</h1>

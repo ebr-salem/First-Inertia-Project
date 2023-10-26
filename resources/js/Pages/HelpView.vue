@@ -1,4 +1,5 @@
 <template>
+    <Head title="Help" />
     <h1>This is help page</h1>
     <h1 style="margin-top: 500px">The current time is: {{ time }}</h1>
     <Link href="/help" as="button" preserve-scroll>Refresh</Link>
