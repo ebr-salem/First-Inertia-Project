@@ -42,7 +42,10 @@ Route::get('/help', function () {
 
 Route::get('/users', function () {
     return Inertia::render('UsersView', [
-        'users' => User::all()
+        'users' => User::all()->map(fn($user) => [
+            'name' => $user->name,
+            'id' => $user->id,
+        ])
     ]);
 });
 
