@@ -22,12 +22,8 @@
         </li>
 
         <li>
-            <NavLink
-                href="/salem?myName=Salem&myAge=20.5"
-                method="post"
-                as="button"
-            >
-                Salem
+            <NavLink href="/users" :isActive="$page.component == 'UsersView'">
+                Users
             </NavLink>
         </li>
     </ul>

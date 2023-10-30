@@ -39,9 +39,19 @@ Route::get('/help', function () {
     ]);
 });
 
-Route::post('/salem', function () {
-    // dd("I'm trying to log out");
-    dd(request('myName') . ' ' . request('myAge'));
+Route::get('/users', function () {
+    return Inertia::render('UsersView', [
+        'users' => [
+            [
+                'name' => 'Ahmed',
+                'id' => 1
+            ],
+            [
+                'name' => 'Ebrahim',
+                'id' => 2
+            ],
+        ]
+    ]);
 });
 
 Route::get('/dashboard', function () {
