@@ -42,7 +42,7 @@ Route::get('/help', function () {
 
 Route::get('/users', function () {
     return Inertia::render('UsersView', [
-        'users' => User::all()->map(fn($user) => [
+        'users' => User::paginate(20)->through(fn($user) => [
             'name' => $user->name,
             'id' => $user->id,
         ])
