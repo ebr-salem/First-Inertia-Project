@@ -41,11 +41,18 @@ Route::get('/help', function () {
 });
 
 Route::get('/users', function () {
+    // dd(request());
+
     return Inertia::render('UsersView', [
-        'users' => User::paginate(20)->through(fn($user) => [
-            'name' => $user->name,
-            'id' => $user->id,
-        ])
+        'users' => User::query()
+            ->when(request()->input('search'), function ($query, $search) {
+                $query->where('name', 'like', "%{$search}%");
+            })
+            ->paginate(20)
+            ->through(fn($user) => [
+                'name' => $user->name,
+                'id' => $user->id,
+            ])
     ]);
 });
 
