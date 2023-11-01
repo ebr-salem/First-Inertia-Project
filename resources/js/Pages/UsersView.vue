@@ -20,13 +20,23 @@ import { router } from "@inertiajs/vue3";
 import { ref, watch } from "vue";
 import Paginator from "./shared/Paginator.vue";
 
-defineProps({
+const props = defineProps({
     users: Object,
+    filters: Object,
 });
 
-const search = ref("");
+const search = ref(props.filters.search);
 
 watch(search, (value) => {
-    router.get("/users", { search: value }, { preserveState: true });
+    router.get(
+        "/users",
+        {
+            search: value,
+        },
+        {
+            preserveState: true,
+            replace: true,
+        }
+    );
 });
 </script>
