@@ -22,7 +22,7 @@
         </li>
 
         <li>
-            <NavLink href="/users" :isActive="$page.component == 'UsersView'">
+            <NavLink href="/users" :isActive="$page.component == 'Users/Index'">
                 Users
             </NavLink>
         </li>

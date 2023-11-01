@@ -1,6 +1,6 @@
 <template>
     <Link
-        class="link"
+        class="link text-black"
         :class="{
             'active-link': isActive,
         }"
@@ -10,18 +10,12 @@
 </template>
 
 <script setup>
-import { Link } from "@inertiajs/vue3";
-
 defineProps({
     isActive: Boolean,
 });
 </script>
 
 <style scoped>
-.link {
-    color: blue;
-}
-
 .link:hover {
     text-decoration: underline;
 }

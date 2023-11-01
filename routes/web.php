@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -43,7 +44,7 @@ Route::get('/help', function () {
 Route::get('/users', function () {
     // dd(request());
 
-    return Inertia::render('UsersView', [
+    return Inertia::render('Users/Index', [
         'users' => User::query()
             ->when(request()->input('search'), function ($query, $search) {
                 $query->where('name', 'like', "%{$search}%");
@@ -56,6 +57,32 @@ Route::get('/users', function () {
             ]),
         'filters' => request()->only(['search'])
     ]);
+});
+
+Route::get('/users/create', function () {
+    return Inertia::render('Users/Create');
+});
+
+Route::post('/users', function () {
+    // Validate the inputs
+    $attrs = request()->validate([
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+    ]);
+
+
+    // Create a user
+    User::created([
+        'name' => request()->input('name'),
+        'email' => request()->input('email'),
+        'password' => request()->input('password')
+    ]);
+
+    // redirect somewhere
+    return redirect('/users');
+
+    // I can't find the created user. Why??????????????
 });
 
 Route::get('/dashboard', function () {
