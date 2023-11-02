@@ -4,7 +4,7 @@
 
         <Link
             href="/users/create"
-            class="bg-black text-white duration-75 px-3 py-1 rounded text-xl"
+            class="bg-black text-white px-3 py-1 rounded text-xl"
         >
             Create New User
         </Link>

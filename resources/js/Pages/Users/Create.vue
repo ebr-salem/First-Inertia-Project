@@ -7,7 +7,7 @@
         @submit.prevent="submitData"
         action=""
         method="post"
-        class="text-left px-10 py-10 bg-zinc-100 max-w-md mx-auto uppercase"
+        class="text-left p-10 bg-zinc-100 max-w-md mx-auto uppercase"
     >
         <label for="name">Name</label><br />
         <input
@@ -16,7 +16,13 @@
             id="name"
             placeholder="Name..."
             class="w-full mt-1"
-        /><br /><br />
+        />
+        <p
+            class="text-xs text-red-500 mt-1 lowercase"
+            v-if="errors.name"
+            v-text="errors.name"
+        ></p>
+        <br /><br />
 
         <label for="email">Email</label><br />
         <input
@@ -26,7 +32,13 @@
             type="email"
             placeholder="Email..."
             class="w-full mt-1"
-        /><br /><br />
+        />
+        <p
+            class="text-xs text-red-500 mt-1 lowercase"
+            v-if="errors.email"
+            v-text="errors.email"
+        ></p>
+        <br /><br />
 
         <label for="password">Password</label><br />
         <input
@@ -36,7 +48,13 @@
             type="password"
             placeholder="Password..."
             class="w-full mt-1"
-        /><br /><br />
+        />
+        <p
+            class="text-xs text-red-500 mt-1 lowercase"
+            v-if="errors.password"
+            v-text="errors.password"
+        ></p>
+        <br /><br />
 
         <input
             type="submit"
@@ -49,6 +67,10 @@
 <script setup>
 import { router } from "@inertiajs/vue3";
 import { reactive } from "vue";
+
+defineProps({
+    errors: Object,
+});
 
 const form = reactive({
     name: "",
