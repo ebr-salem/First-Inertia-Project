@@ -19,8 +19,8 @@
         />
         <p
             class="text-xs text-red-500 mt-1 lowercase"
-            v-if="errors.name"
-            v-text="errors.name"
+            v-if="form.errors.name"
+            v-text="form.errors.name"
         ></p>
         <br /><br />
 
@@ -35,8 +35,8 @@
         />
         <p
             class="text-xs text-red-500 mt-1 lowercase"
-            v-if="errors.email"
-            v-text="errors.email"
+            v-if="form.errors.email"
+            v-text="form.errors.email"
         ></p>
         <br /><br />
 
@@ -51,34 +51,30 @@
         />
         <p
             class="text-xs text-red-500 mt-1 lowercase"
-            v-if="errors.password"
-            v-text="errors.password"
+            v-if="form.errors.password"
+            v-text="form.errors.password"
         ></p>
         <br /><br />
 
         <input
             type="submit"
             value="Create"
-            class="px-3 py-1 cursor-pointer bg-black text-white rounded"
+            class="px-3 py-1 cursor-pointer bg-black text-white rounded disabled:bg-slate-400"
+            :disabled="form.processing"
         />
     </form>
 </template>
 
 <script setup>
-import { router } from "@inertiajs/vue3";
-import { reactive } from "vue";
+import { useForm } from "@inertiajs/vue3";
 
-defineProps({
-    errors: Object,
-});
-
-const form = reactive({
+const form = useForm({
     name: "",
     email: "",
     password: "",
 });
 
 function submitData() {
-    router.post("/users", form);
+    form.post("/users", form);
 }
 </script>

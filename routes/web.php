@@ -64,13 +64,14 @@ Route::get('/users/create', function () {
 });
 
 Route::post('/users', function () {
+    // sleep(3);
+
     // Validate the inputs
     $attrs = request()->validate([
         'name' => 'required',
         'email' => 'required',
         'password' => 'required',
     ]);
-
 
     // Create a user
     User::created([
